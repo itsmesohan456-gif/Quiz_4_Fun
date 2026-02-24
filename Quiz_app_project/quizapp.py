@@ -1,5 +1,10 @@
 import random
 import time
+import os 
+
+def clr_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def run_quiz():
     questions = [
         {
@@ -37,3 +42,36 @@ def run_quiz():
 
     score = 0
     total_questions = len(questions)
+
+    for i, q in enumerate(questions):
+        clr_screen()
+
+        print(f"--- Question {i + 1} of {total_questions} ---")
+        print(f"{q['prompt']}\n")
+        for option in q['options']:
+            print(option)
+
+        guess = input("\nYour answer is (A, B, C or D): ").strip().upper()
+
+        if guess == q['answer']:
+            print("\nCorrect answer!")
+            score += 1
+        else:
+            print(f"\nOops! Wrong Answer!\nThe right answer wa {q['answer']}.")
+
+        print("\nLoading next question...")
+        time.sleep(5)
+
+    clr_screen()
+    print(f"--- QUIZ IS COMPLETE ----")
+    print(f"Your final score is {score}/{total_questions}")
+
+    if score == total_questions:
+        print("Feedback: Perfect! You are a genius>")
+    elif score >= total_questions // 2:
+        print("Feedback: Great job! You were good here.")
+    else:
+        print("Feedback: Better luck next time!")
+
+if __name__ == "__main__":
+    run_quiz()

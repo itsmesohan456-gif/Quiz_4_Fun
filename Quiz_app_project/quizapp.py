@@ -14,7 +14,7 @@ def run_quiz():
         },
         {
             "prompt": "Which programming language is known as the snake langauge?",
-            "options": ["A) Java", "B) C++" "C) Python", "D) Ruby"],
+            "options": ["A) Java", "B) C++" ,"C) Python", "D) Ruby"],
             "answer": "C"
         },
         {
@@ -24,7 +24,7 @@ def run_quiz():
         },
         {
             "prompt": "Which country's flag is the only non-rectangular flag in the world?",
-            "options": ["A) USA", "B) Switzerland" "C) Nepal" "D) Vatican City"],
+            "options": ["A) USA", "B) Switzerland", "C) Nepal","D) Vatican City"],
             "answer": "C"
         },
         {
